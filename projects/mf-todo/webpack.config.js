@@ -32,7 +32,8 @@ module.exports = {
         name: "mfTodo",
         filename: "remoteEntry.js",
         exposes: {
-            './Component': './projects/mf-todo/src/app/app.component.ts',
+            //'./ShowinfoModule': './projects/mf-todo/src/app/showinfo/showinfo.module.ts',
+            './ShowinfoModule': './projects/mf-todo/src/app/showinfo/showinfo.component.ts',
         },        
     
 
@@ -41,8 +42,13 @@ module.exports = {
           "@angular/common": { singleton: true, strictVersion: true, requiredVersion: 'auto' }, 
           "@angular/common/http": { singleton: true, strictVersion: true, requiredVersion: 'auto' }, 
           "@angular/router": { singleton: true, strictVersion: true, requiredVersion: 'auto' },
-
-          ...sharedMappings.getDescriptors()
+          rxjs: {
+            singleton: true,
+            strictVersion: true,
+            requiredVersion: 'auto',
+            includeSecondaries: true,
+        },
+        ...sharedMappings.getDescriptors()
         })
         
     }),

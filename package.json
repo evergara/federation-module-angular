@@ -4,6 +4,8 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
+    "mf-start": "ng serve mf-todo --port=4020 --o",
+    "h-start": "ng serve host --port=500 --o",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
